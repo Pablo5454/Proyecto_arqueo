@@ -3,6 +3,8 @@
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
             
             <a href="{{ route('arqueologos.index') }}">Arqueólogos</a>
+            <a href="{{ route('yacimientos.index') }}">Yacimientos</a>
+            <a href="{{ route('piezas.index') }}">Piezas</a>
         </h2>
     </x-slot>
 

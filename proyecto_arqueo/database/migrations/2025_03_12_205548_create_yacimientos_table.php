@@ -11,12 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('arqueologos', function (Blueprint $table) {
+        Schema::create('yacimientos', function (Blueprint $table) {
             $table->id();
             $table->string('nombre');
-            $table->string('apellidos');
-            $table->string('dni')->unique();
-            $table->string('especialidad')->nullable();
+            $table->string('ubicacion');
+            $table->string('poblacion');
+            $table->string('pais');
+            $table->year('anio_descubrimiento');
             $table->timestamps();
         });
     }
@@ -26,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('arqueologos');
+        Schema::dropIfExists('yacimientos');
     }
 };
