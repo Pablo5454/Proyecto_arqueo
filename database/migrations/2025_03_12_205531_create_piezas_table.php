@@ -15,8 +15,8 @@ return new class extends Migration
             $table->id();
             $table->string('nombre');
             $table->text('descripcion')->nullable();
-            // $table->foreignId('yacimiento_id');
-            // $table->foreignId('arqueologo_id');
+            $table->unsignedBigInteger('yacimiento_id');
+            $table->foreign('yacimiento_id')->references('id')->on('yacimientos')->onDelete('cascade');
             $table->timestamps();
         });
     }

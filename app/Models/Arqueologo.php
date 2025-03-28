@@ -14,12 +14,10 @@ class Arqueologo extends Model
         'nombre', 
         'apellidos', 
         'dni', 
-        'especialidad', 
-        'yacimiento_id'
+        'especialidad'
     ];
 
     public function yacimiento()
     {
-        return $this->belongsTo(Yacimiento::class);
-    }
+        return $this->belongsToMany(Yacimiento::class, 'arqueologos_yacimientos', 'arqueologo_id', 'yacimiento_id');    }
 }
