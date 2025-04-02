@@ -23,9 +23,20 @@ class ArqueologoController extends Controller
     public function store(Request $request)
     {
 
-    Arqueologo::create($request->all());
-
-    return redirect()->route('arqueologos.index');
+        $request->validate([
+            'nombre' => 'required|string|max:255',
+            'apellidos' => 'required|string|max:255',
+            'dni' => 'required|string|max:9', 
+            'especialidad' => 'nullable|string|max:255',
+            'yacimiento_id' => 'required|array',  
+            'yacimiento_id.*' => 'exists:yacimientos,id', 
+        ]);
+    
+        $arqueologo = Arqueologo::create($request->all());
+    
+        $arqueologo->yacimientos()->attach($request->yacimiento_id);
+    
+        return redirect()->route('arqueologos.index');
     }
     
 

@@ -15,6 +15,16 @@
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
                     </x-nav-link>
+
+                    <x-nav-link :href="route('arqueologos.index')" :active="request()->routeIs('arqueologos.index')">
+                        {{ __('Arqueólogos') }}
+                    </x-nav-link>
+                    <x-nav-link :href="route('yacimientos.index')" :active="request()->routeIs('yacimientos.index')">
+                        {{ __('Yacimientos') }}
+                    </x-nav-link>
+                    <x-nav-link :href="route('piezas.index')" :active="request()->routeIs('piezas.index')">
+                        {{ __('Piezas') }}
+                    </x-nav-link>
                 </div>
             </div>
 
