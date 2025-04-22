@@ -35,7 +35,7 @@
 
             <div class="mb-3">
                 <label for="yacimiento_id" class="form-label">Yacimiento</label>
-                <select class="form-select" id="yacimiento_id" name="yacimiento_id" required>
+                <select class="form-select" id="yacimiento_id" name="yacimiento_id[]" multiple required>
                     @foreach ($yacimientos as $yacimiento)
                         <option value="{{ $yacimiento->id }}">{{ $yacimiento->nombre }}</option>
                     @endforeach

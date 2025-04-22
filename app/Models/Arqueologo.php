@@ -17,7 +17,7 @@ class Arqueologo extends Model
         'especialidad'
     ];
 
-    public function yacimiento()
+    public function yacimientos()
     {
         return $this->belongsToMany(Yacimiento::class, 'arqueologos_yacimientos', 'arqueologo_id', 'yacimiento_id');    }
 }

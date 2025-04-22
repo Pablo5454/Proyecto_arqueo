@@ -32,7 +32,12 @@
                 @foreach ($arqueologos as $arqueologo)
                     <tr>
                         <td>{{ $arqueologo->nombre }}</td>
-                        <td>{{ $arqueologo->yacimiento->nombre }}</td>
+                        <td>
+                            @foreach ($arqueologo->yacimientos as $yacimiento)
+                                <span class="badge bg-secondary">{{ $yacimiento->nombre }}</span>
+                            @endforeach
+                        </td>
+                        
                         <td>
                             <a href="{{ route('arqueologos.edit', $arqueologo->id) }}" class="btn btn-warning btn-sm">Editar</a>
                             
