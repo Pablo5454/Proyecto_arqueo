@@ -50,6 +50,7 @@ class ArqueologoController extends Controller
     {   
 
     $arqueologo->update($request->all());
+    $arqueologo->yacimientos()->sync($request->yacimiento_id);
 
     return redirect()->route('arqueologos.index');
     }

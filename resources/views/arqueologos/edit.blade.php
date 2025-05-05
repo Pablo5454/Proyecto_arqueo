@@ -1,14 +1,12 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Editar Arqueólogo</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" />
-</head>
-<body>
+@extends('layouts.bootstrap')
+
+@section('title', 'Editar Arqueólogo')
+
+@section('content')
     <div class="container py-4">
         <h1 class="mb-4">Editar Arqueólogo</h1>
+        <a href="{{ route('arqueologos.index') }}" class="btn btn-secondary mb-3">← Volver a la lista</a>
+
 
         <form action="{{ route('arqueologos.update', $arqueologo->id) }}" method="POST">
             @csrf
@@ -48,5 +46,4 @@
             <button type="submit" class="btn btn-primary">Actualizar</button>
         </form>
     </div>
-</body>
-</html>
+@endsection

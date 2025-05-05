@@ -9,6 +9,8 @@ class Pieza extends Model
 {
     use HasFactory;
 
+    protected $fillable = ['nombre', 'descripcion', 'yacimiento_id'];
+
     public function yacimiento()
     {
         return $this->belongsTo(Yacimiento::class);

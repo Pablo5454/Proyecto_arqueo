@@ -32,7 +32,12 @@ Route::middleware('auth')->group(function () {
     Route::delete('/yacimientos/{yacimiento}', [YacimientoController::class, 'destroy'])->name('yacimientos.destroy');
     
     Route::get('/piezas', [PiezaController::class, 'index'])->name('piezas.index');
-
+    Route::get('/piezas/create', [PiezaController::class, 'create'])->name('piezas.create');
+    Route::post('/piezas', [PiezaController::class, 'store'])->name('piezas.store');
+    Route::get('/piezas/{pieza}/edit', [PiezaController::class, 'edit'])->name('piezas.edit');
+    Route::put('/piezas/{pieza}', [PiezaController::class, 'update'])->name('piezas.update');
+    Route::delete('/piezas/{pieza}', [PiezaController::class, 'destroy'])->name('piezas.destroy');
+    
 
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');

@@ -1,18 +1,43 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lista de Piezas</title>
-</head>
-<body>
-    <h1>Lista de Piezas</h1>
+@extends('layouts.bootstrap')
 
-    <!-- Lista de piezas -->
-    <ul>
-        @foreach ($piezas as $pieza)
-            <li>{{ $pieza->nombre }} </li>
-        @endforeach
-    </ul>
-</body>
-</html>
+@section('title', 'Lista de Piezas')
+
+@section('content')
+    <h1 class="mb-4">Lista de Piezas</h1>
+    <a href="{{ route('dashboard') }}" class="btn btn-outline-secondary mb-3">← Volver al menú principal</a>
+    @if (session('success'))
+        <div class="alert alert-success">
+            {{ session('success') }}
+        </div>
+    @endif
+
+    <a href="{{ route('piezas.create') }}" class="btn btn-success mb-3">Crear Nueva Pieza</a>
+
+    <table class="table table-striped table-bordered">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Descripción</th>
+                <th>Yacimiento</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach ($piezas as $pieza)
+                <tr>
+                    <td>{{ $pieza->nombre }}</td>
+                    <td>{{ $pieza->descripcion }}</td>
+                    <td>{{ $pieza->yacimiento->nombre }}</td>
+                    <td>
+                        <a href="{{ route('piezas.edit', $pieza) }}" class="btn btn-primary btn-sm">Editar</a>
+                        <form action="{{ route('piezas.destroy', $pieza) }}" method="POST" style="display:inline;">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="btn btn-danger btn-sm">Eliminar</button>
+                        </form>
+                    </td>
+                </tr>
+            @endforeach
+        </tbody>
+    </table>
+@endsection
