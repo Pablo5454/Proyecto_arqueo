@@ -9,7 +9,6 @@ class Yacimiento extends Model
 {
     use HasFactory;
 
-    // Agrega estos campos como "fillable"
     protected $fillable = [
         'nombre',
         'ubicacion',

@@ -9,7 +9,6 @@ class YacimientoController extends Controller
 {
     public function __construct()
     {
-        // Middlewares para proteger las rutas según roles y permisos
         $this->middleware('permission:view yacimientos', ['only' => ['index']]);
         $this->middleware('role:gestor', ['only' => ['create', 'store', 'edit', 'update', 'destroy']]);
     }

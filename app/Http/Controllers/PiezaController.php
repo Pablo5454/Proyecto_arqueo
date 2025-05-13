@@ -9,7 +9,6 @@ class PiezaController extends Controller
 {
     public function __construct()
     {
-        // Middleware para proteger las rutas según roles y permisos
         $this->middleware('permission:view piezas', ['only' => ['index']]);
         $this->middleware('permission:create piezas', ['only' => ['create', 'store']]);
         $this->middleware('permission:edit piezas', ['only' => ['edit', 'update']]);
