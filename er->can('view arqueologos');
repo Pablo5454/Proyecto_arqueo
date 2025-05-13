@@ -1,0 +1,93 @@
+[90m= [39m[34;4mIlluminate\Database\Eloquent\Collection[39;24m {#5220
+    [34mall[39m: [
+      [34;4mSpatie\Permission\Models\Permission[39;24m {#6217
+        [34mid[39m: [35m1[39m,
+        [34mname[39m: "[32mcreate piezas[39m",
+        [34mguard_name[39m: "[32mweb[39m",
+        [34mcreated_at[39m: "[32m2025-05-12 14:20:17[39m",
+        [34mupdated_at[39m: "[32m2025-05-12 14:20:17[39m",
+        [34mpivot[39m: [34;4mIlluminate\Database\Eloquent\Relations\Pivot[39;24m {#6216
+          [34mrole_id[39m: [35m2[39m,
+          [34mpermission_id[39m: [35m1[39m,
+        },
+      },
+      [34;4mSpatie\Permission\Models\Permission[39;24m {#6218
+        [34mid[39m: [35m2[39m,
+        [34mname[39m: "[32mview piezas[39m",
+        [34mguard_name[39m: "[32mweb[39m",
+        [34mcreated_at[39m: "[32m2025-05-12 14:20:17[39m",
+        [34mupdated_at[39m: "[32m2025-05-12 14:20:17[39m",
+        [34mpivot[39m: [34;4mIlluminate\Database\Eloquent\Relations\Pivot[39;24m {#6215
+          [34mrole_id[39m: [35m2[39m,
+          [34mpermission_id[39m: [35m2[39m,
+        },
+      },
+      [34;4mSpatie\Permission\Models\Permission[39;24m {#6219
+        [34mid[39m: [35m3[39m,
+        [34mname[39m: "[32medit piezas[39m",
+        [34mguard_name[39m: "[32mweb[39m",
+        [34mcreated_at[39m: "[32m2025-05-12 14:20:17[39m",
+        [34mupdated_at[39m: "[32m2025-05-12 14:20:17[39m",
+        [34mpivot[39m: [34;4mIlluminate\Database\Eloquent\Relations\Pivot[39;24m {#6213
+          [34mrole_id[39m: [35m2[39m,
+          [34mpermission_id[39m: [35m3[39m,
+        },
+      },
+      [34;4mSpatie\Permission\Models\Permission[39;24m {#6220
+        [34mid[39m: [35m4[39m,
+        [34mname[39m: "[32mdelete piezas[39m",
+        [34mguard_name[39m: "[32mweb[39m",
+        [34mcreated_at[39m: "[32m2025-05-12 14:20:17[39m",
+        [34mupdated_at[39m: "[32m2025-05-12 14:20:17[39m",
+        [34mpivot[39m: [34;4mIlluminate\Database\Eloquent\Relations\Pivot[39;24m {#6212
+          [34mrole_id[39m: [35m2[39m,
+          [34mpermission_id[39m: [35m4[39m,
+        },
+      },
+      [34;4mSpatie\Permission\Models\Permission[39;24m {#6221
+        [34mid[39m: [35m5[39m,
+        [34mname[39m: "[32mcreate yacimientos[39m",
+        [34mguard_name[39m: "[32mweb[39m",
+        [34mcreated_at[39m: "[32m2025-05-12 14:20:17[39m",
+        [34mupdated_at[39m: "[32m2025-05-12 14:20:17[39m",
+        [34mpivot[39m: [34;4mIlluminate\Database\Eloquent\Relations\Pivot[39;24m {#6211
+          [34mrole_id[39m: [35m2[39m,
+          [34mpermission_id[39m: [35m5[39m,
+        },
+      },
+      [34;4mSpatie\Permission\Models\Permission[39;24m {#6222
+        [34mid[39m: [35m6[39m,
+        [34mname[39m: "[32mview yacimientos[39m",
+        [34mguard_name[39m: "[32mweb[39m",
+        [34mcreated_at[39m: "[32m2025-05-12 14:20:17[39m",
+        [34mupdated_at[39m: "[32m2025-05-12 14:20:17[39m",
+        [34mpivot[39m: [34;4mIlluminate\Database\Eloquent\Relations\Pivot[39;24m {#6297
+          [34mrole_id[39m: [35m2[39m,
+          [34mpermission_id[39m: [35m6[39m,
+        },
+      },
+      [34;4mSpatie\Permission\Models\Permission[39;24m {#6223
+        [34mid[39m: [35m7[39m,
+        [34mname[39m: "[32medit yacimientos[39m",
+        [34mguard_name[39m: "[32mweb[39m",
+        [34mcreated_at[39m: "[32m2025-05-12 14:20:17[39m",
+        [34mupdated_at[39m: "[32m2025-05-12 14:20:17[39m",
+        [34mpivot[39m: [34;4mIlluminate\Database\Eloquent\Relations\Pivot[39;24m {#5245
+          [34mrole_id[39m: [35m2[39m,
+          [34mpermission_id[39m: [35m7[39m,
+        },
+      },
+      [34;4mSpatie\Permission\Models\Permission[39;24m {#6224
+        [34mid[39m: [35m8[39m,
+        [34mname[39m: "[32mdelete yacimientos[39m",
+        [34mguard_name[39m: "[32mweb[39m",
+        [34mcreated_at[39m: "[32m2025-05-12 14:20:17[39m",
+        [34mupdated_at[39m: "[32m2025-05-12 14:20:17[39m",
+        [34mpivot[39m: [34;4mIlluminate\Database\Eloquent\Relations\Pivot[39;24m {#5219
+          [34mrole_id[39m: [35m2[39m,
+          [34mpermission_id[39m: [35m8[39m,
+        },
+      },
+    ],
+  }
+
