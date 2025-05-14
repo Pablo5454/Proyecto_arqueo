@@ -29,8 +29,10 @@ Route::middleware('auth')->group(function () {
         // Ver listados
         Route::get('/arqueologos', [ArqueologoController::class, 'index'])->name('arqueologos.index');
         Route::get('/yacimientos', [YacimientoController::class, 'index'])->name('yacimientos.index');
-        Route::get('/yacimientos/{yacimiento}', [YacimientoController::class, 'show'])->name('yacimientos.show');
+        // Route::get('/yacimientos/{yacimiento}', [YacimientoController::class, 'show'])->name('yacimientos.show');
         Route::get('/piezas', [PiezaController::class, 'index'])->name('piezas.index');
+        Route::get('/piezas/create', [PiezaController::class, 'create'])->name('piezas.create');
+        Route::post('/piezas', [PiezaController::class, 'store'])->name('piezas.store');
 
     });
 
@@ -60,8 +62,7 @@ Route::middleware('auth')->group(function () {
 
     // Rutas exclusivas para arqueólogos (crear piezas)
     Route::middleware('role:arqueologo')->group(function() {
-        Route::get('/piezas/create', [PiezaController::class, 'create'])->name('piezas.create');
-        Route::post('/piezas', [PiezaController::class, 'store'])->name('piezas.store');
+        
         
     });
 

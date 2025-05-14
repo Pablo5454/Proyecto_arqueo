@@ -33,13 +33,11 @@ class YacimientoController extends Controller
 
     public function store(Request $request)
     {
+        // dd($request->all()); 
         // Validación de datos
         $request->validate([
             'nombre' => 'required|string|max:255',
             'ubicacion' => 'required|string|max:255',
-            'descripcion' => 'required|string',
-            'fecha_inicio' => 'required|date',
-            'fecha_fin' => 'required|date|after_or_equal:fecha_inicio',
             'pais' => 'required|string|max:255',
             'anio_descubrimiento' => 'required|integer|between:1900,' . date('Y'), 
             'poblacion' => 'required|string|max:255', 
@@ -49,9 +47,6 @@ class YacimientoController extends Controller
         $yacimiento = Yacimiento::create([
             'nombre' => $request->nombre,
             'ubicacion' => $request->ubicacion,
-            'descripcion' => $request->descripcion,
-            'fecha_inicio' => $request->fecha_inicio,
-            'fecha_fin' => $request->fecha_fin,
             'pais' => $request->pais,
             'anio_descubrimiento' => $request->anio_descubrimiento,
             'poblacion' => $request->poblacion, 
@@ -72,22 +67,20 @@ class YacimientoController extends Controller
         $request->validate([
             'nombre' => 'required|string|max:255',
             'ubicacion' => 'required|string|max:255',
-            'descripcion' => 'required|string',
-            'fecha_inicio' => 'required|date',
-            'fecha_fin' => 'nullarequiredle|date|after_or_equal:fecha_inicio',
             'pais' => 'required|string|max:255', // Validación para pais
-            'anio_descubrimiento' => 'required|integer|between:1900,' . date('Y'), // Asegurarse de que el año esté en un rango válido
+            'anio_descubrimiento' => 'required|integer|between:1900,' . date('Y'), 
+            'poblacion' => 'required|string|max:255',
+
         ]);
 
         // Actualizar yacimiento
         $yacimiento->update([
             'nombre' => $request->nombre,
             'ubicacion' => $request->ubicacion,
-            'descripcion' => $request->descripcion,
-            'fecha_inicio' => $request->fecha_inicio,
-            'fecha_fin' => $request->fecha_fin,
             'pais' => $request->pais,
             'anio_descubrimiento' => $request->anio_descubrimiento,
+            'poblacion' => $request->poblacion, 
+
         ]);
         
         return redirect()->route('yacimientos.index')
